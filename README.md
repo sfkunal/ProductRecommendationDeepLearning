@@ -3,23 +3,36 @@
 ### Data Preprocessing
 First, I import the necessary libraries and load the data from a CSV file (`UrbanEdgeApparel.csv`) into a pandas DataFrame (`df`). To ensure data quality, I define a `preprocess` function that handles various preprocessing tasks. This includes converting data types, such as date columns to datetime format and categorical columns to the category data type, handling missing values, and dropping duplicates. After preprocessing, I inspect the DataFrame's information to ensure everything looks good.
 
+![df info](images/info.png)
+
 ### Graph Creation
 Moving on, I import the `networkx` library for graph manipulation. Here, I define a function called `create_graph` to construct a graph representation from the DataFrame. This function iterates over each order and adds edges between products that are purchased together. The resulting graph `G` is then displayed, showing the number of nodes and edges.
 
 ### Exploratory Analysis
 Before diving into modeling, I conduct exploratory analysis on the data. This involves grouping the DataFrame by 'Order ID' and extracting unique product IDs for each order. I calculate and print the average number of products ordered and visualize the top 10 best-selling products using a bar plot.
 
+![Graph](images/top10.png)
+
 ### Time Series Forecasting
 Next, I perform time series forecasting using the Prophet library. I aggregate the 'Total Selling Price' column based on the 'Order Date' to create a time series. Then, I train the Prophet model on the data up to a certain date ('2023-01-01') and test it on the remaining data. I calculate metrics such as Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and Mean Absolute Percentage Error (MAPE), and visualize the forecast and trend components.
+
+![Graph](images/ML.png) ![Graph](images/ml2.png)
 
 ### Graph Visualization
 To better understand the relationships between products, I visualize the graph created earlier using the `pyvis` library. This interactive visualization is displayed in an HTML format, allowing for exploration of the graph structure.
 
+![Graph](images/graph.png)
+
+
 ### Graph Convolutional Network (GCN)
 Now, I move on to building a GCN-based recommendation model using PyTorch and the `torch_geometric` library. I define the architecture of the GCN model within the `GNNRecommendationModel` class. After training the model, I print training metrics such as loss, accuracy, precision, recall, and F1-score. Finally, I save the trained model to a file ('gnn_recommendation_model.pth') for future use.
 
+![Graph](images/gcn1.png) ![Graph](images/gcn2.png) ![Graph](images/gcn3.png) ![Graph](images/gcn4.png) ![Graph](images/gcn5.png)
+
 ### Graph Attention Network (GAT)
 Similarly, I implement a GAT-based recommendation model. The architecture of the GAT model is defined within the `GATRecommendationModel` class. After training the model, I print training metrics and save the trained model to a file ('gat_recommendation_model.pth').
+
+![Graph](images/gat1.png) ![Graph](images/gat2.png) ![Graph](images/gat3.png) ![Graph](images/gat4.png) ![Graph](images/gat5.png)
 
 ### Trade-offs between GCN and GAT for Product Recommendations
 
