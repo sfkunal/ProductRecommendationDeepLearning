@@ -1,4 +1,4 @@
-# ProductRecommendationDeepLearning
+# Product Recommendation using Deep Learning using Graph Convolutional Networks and Graph Attention Networks
 
 ### Data Preprocessing
 First, I import the necessary libraries and load the data from a CSV file (`UrbanEdgeApparel.csv`) into a pandas DataFrame (`df`). To ensure data quality, I define a `preprocess` function that handles various preprocessing tasks. This includes converting data types, such as date columns to datetime format and categorical columns to the category data type, handling missing values, and dropping duplicates. After preprocessing, I inspect the DataFrame's information to ensure everything looks good.
